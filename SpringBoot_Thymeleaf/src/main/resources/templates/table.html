@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>table</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <td>2.2.2 CURRENT GA</td>
+            <td><a th:href="@{https://docs.spring.io/spring-boot/docs/2.2.2.RELEASE/reference/html/}">Reference Doc.</a></td>
+            <td><a th:href="@{https://docs.spring.io/spring-boot/docs/2.2.2.RELEASE/api/}">API Doc.</a></td>
+        </tr>
+        <tr>
+            <td>2.2.3 SNAPSHOT</td>
+            <td><a th:href="@{https://docs.spring.io/spring-boot/docs/2.2.3.RELEASE/reference/html/}">Reference Doc.</a></td>
+            <td><a th:href="@{https://docs.spring.io/spring-boot/docs/2.2.3.RELEASE/api/}">API Doc.</a></td>
+        </tr>
+        <tr>
+            <td>2.1.12 SNAPSHOT</td>
+            <td><a th:href="@{https://docs.spring.io/spring-boot/docs/2.1.12.RELEASE/reference/html/}">Reference Doc.</a></td>
+            <td><a th:href="@{https://docs.spring.io/spring-boot/docs/2.1.12.RELEASE/api/}">API Doc.</a></td>
+        </tr>
+        <tr>
+            <td>2.1.11 GA</td>
+            <td><a th:href="@{https://docs.spring.io/spring-boot/docs/2.1.11.RELEASE/reference/html/}">Reference Doc.</a></td>
+            <td><a th:href="@{https://docs.spring.io/spring-boot/docs/2.1.11.RELEASE/api/}">API Doc.</a></td>
+        </tr>
+    </table>
+
+
+    <table border="1">
+        <tr>
+            <td>版本号</td>
+            <td>文档地址</td>
+            <td>api地址</td>
+        </tr>
+        <tr th:each="table : ${springs}">
+            <td th:text="${table.version}"></td>
+            <td><a th:href="@{${table.docurl}}">Reference Doc.</a></td>
+            <td><a th:href="@{${table.apiurl}}">API Doc.</a></td>
+        </tr>
+    </table>
+</body>
+</html>
